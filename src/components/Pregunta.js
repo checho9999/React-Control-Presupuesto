@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import Error from './Error'
 
-const Pregunta = ( { guardarPresupuesto , guardarRestante } ) => {
+const Pregunta = ( { guardarPresupuesto , guardarRestante, actualizarPregunta } ) => {
 
     //definir el state    
     const [ cantidad, guardarCantidad ] = useState(0)
@@ -31,6 +31,7 @@ const Pregunta = ( { guardarPresupuesto , guardarRestante } ) => {
         guardarError(false);
         guardarPresupuesto(cantidad);
         guardarRestante(cantidad);
+        actualizarPregunta(false);
 
     }
 
@@ -55,7 +56,7 @@ const Pregunta = ( { guardarPresupuesto , guardarRestante } ) => {
                 <input
                     type="submit"
                     className="button-primary u-full-width"
-                    placeholder="Definir presupuesto"
+                    value="Definir presupuesto"
                 />
             </form>
         </Fragment>
